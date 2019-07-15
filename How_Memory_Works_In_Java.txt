@@ -1,0 +1,39 @@
+String Pool:
+============
+
+The place where the java vm, stores the string objects created through String literals.
+Ex: 
+String x = "Test"; //This Object will be store in String Pool
+String y = "Test";
+check if(x == y) { "both are same object"}
+
+String a = new Integer(76).toString(); // This won't be stored in String Pool and will be stored in Heap Only
+String b = "76";
+
+Check if(a == b) { "Both objects aren't equal" }
+
+String p = new Integer(76).toString().intern(); // This won't be stored in String Pool and will be stored in Heap Only
+String q = "76";
+
+Check if(p == q) { "Both objects are equal" }
+
+Garbage Collection Eligibility:
+===============================
+
+If an object in the heap isn't reachable from any reference in the stack, It is considered as garbage.
+Note: An Object eligible for garbage collection might have references or may be referenced by another object in the heap. 
+
+gc() and finalize():
+====================
+gc() shouldn't be called explicitly, as it doesn't provide guaranteed execution of the garbage collection.
+No use of calling gc() or finalise(), As it is never certain that they will run. 
+No operation can be performed on the basis of execution of these two methods.
+
+Detecting Soft leaks:
+=====================
+Soft leak: An Object available in the Heap Memory which will never be used again but still has a reference in the stack, hence won't be garbage collected.
+Detect Soft leak: To Identify the Soft leaks in memory, Need to analyze the code performance by monitoring the heap memory usage using some tool like JVisualM (JDK/bin/JVisualM.exe).
+
+
+ 
+
