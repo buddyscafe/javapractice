@@ -12,7 +12,7 @@ String b = "76";
 
 Check if(a == b) { "Both objects aren't equal" }
 
-String p = new Integer(76).toString().intern(); // This won't be stored in String Pool and will be stored in Heap Only
+String p = new Integer(76).toString().intern(); // This will be stored in String Pool instead of Heap
 String q = "76";
 
 Check if(p == q) { "Both objects are equal" }
