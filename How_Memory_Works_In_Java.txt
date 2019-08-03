@@ -35,5 +35,15 @@ Soft leak: An Object available in the Heap Memory which will never be used again
 Detect Soft leak: To Identify the Soft leaks in memory, Need to analyze the code performance by monitoring the heap memory usage using some tool like JVisualM (JDK/bin/JVisualM.exe).
 
 
+Garbage Collection:
+===================
+1. Mark and sweep: Default algorithm used by garbage collector in java.
+Behaviour: Garbage collector marks all the active references in the heap and then free the space by runing the sweep process over un marked objects.
+Tradeoff: In general, at a time, there are very less no of objects having active references in Heap as compared to unreferenced ones. So marking all the active referenced object would be faster than marking unreferenced ones, hence this algorithm provides qicker garbage collection in such cases.
+2. Generational Garbage Collection: 
+
+
+
+
  
 
